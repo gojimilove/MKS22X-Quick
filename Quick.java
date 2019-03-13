@@ -8,20 +8,37 @@ public class Quick {
   	}
   	int pivot = end/2;
   	System.out.println("index "+pivot+": "+data[pivot]);
-  	for (int i = start; i < end; i++) {
-  		if (data[i] > data[pivot]) {
-  			System.out.println(data[i]+" is GREATER than "+data[pivot]);
-  		}
-  		else {
-  			System.out.println(data[i]+" is LESS than or equal to "+data[pivot]);
 
-  		}
+  	int low = start;
+  	int high = end;
+  	while (low < end && high > -1) {
+ 			if (low < pivot && data[low] > data[pivot]) {
+ 				int oldL = data[low];
+ 				data[low] = data[high];
+ 				data[high] = oldL;
+ 				high--;
+ 			}
+ 			else {
+ 				if (low > pivot && data[low] < data[pivot]) {
+ 					int small = data[low];
+ 					data[low] = data[pivot];
+ 					data[pivot] = small;
+ 					pivot = low;
+ 				}
+ 				low++;
+ 			}
   	}
-  	return -1;
+
+
+  	for (int i = start; i < end+1; i++) {
+  		System.out.println(data[i]);
+  	}
+  	System.out.println("index "+pivot+": "+data[pivot]);
+  	return pivot;
   }
 
   public static void main(String[] args) {
-  	int[] test = new int[]{17,61,67,47,93,12,20,4,44,68};
-  	partition(test, 0, 9);
+  	int[] test = new int[]{17,61,67,93,47,12,20,4,44,68};
+  	System.out.println(partition(test, 0, 9));
   }
 }
