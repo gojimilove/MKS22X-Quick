@@ -3,12 +3,12 @@ public class Quick {
   *@return the index of the final position of the pivot element.
   */
   public static int partition (int [] data, int start, int end){
-  	for (int i = start; i < end+1; i++) {
-  		System.out.println(data[i]);
-  	}
+  	// for (int i = start; i < end+1; i++) {
+  	// 	System.out.println(data[i]);
+  	// }
   	int randPivot = (int)(Math.random()*(end+1));
   	int pivot = randPivot;
-  	System.out.println("index "+pivot+": "+data[pivot]);
+  	//System.out.println("index "+pivot+": "+data[pivot]);
 
   	//pointers for current low and high
   	int low = start;
@@ -34,15 +34,19 @@ public class Quick {
 
 
 
-  	for (int i = start; i < end+1; i++) {
-  		System.out.println(data[i]);
-  	}
-  	System.out.println("index "+pivot+": "+data[pivot]);
+  	// for (int i = start; i < end+1; i++) {
+  	// 	System.out.println(data[i]);
+  	// }
+  	// System.out.println("index "+pivot+": "+data[pivot]);
   	return pivot;
   }
 
   public static void main(String[] args) {
-  	int[] test = new int[]{17,61,67,93,47,12,20,4,44,68};
-  	System.out.println(partition(test, 0, 9));
+  	int[] test1 = new int[]{17,61,67,93,47,12,20,4,44,68};
+  	int[] test2 = new int[]{27,29,6,13,45};
+  	int[] test3 = new int[]{8,6,7,5,3,0,9};
+  	System.out.println(partition(test1, 0, 9)+"\n\n");
+  	System.out.println(partition(test2, 0, 4)+"\n\n");
+  	System.out.println(partition(test3, 0, 6)+"\n\n");
   }
 }
