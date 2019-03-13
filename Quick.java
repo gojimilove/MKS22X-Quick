@@ -6,8 +6,8 @@ public class Quick {
   	// for (int i = start; i < end+1; i++) {
   	// 	System.out.println(data[i]);
   	// }
-  	int randPivot = (int)(Math.random()*(end+1));
-  	int pivot = randPivot;
+  	//int randPivot = (int)(Math.random()*(end+1));
+  	int pivot = end/2;
   	//System.out.println("index "+pivot+": "+data[pivot]);
 
   	//pointers for current low and high
@@ -31,15 +31,25 @@ public class Quick {
   			low++;
   		}
   	}
-
-
-
   	// for (int i = start; i < end+1; i++) {
   	// 	System.out.println(data[i]);
   	// }
   	// System.out.println("index "+pivot+": "+data[pivot]);
   	return pivot;
   }
+
+  /*return the value that is the kth smallest value of the array. k=0 is the smallest
+  */
+  public static int quickselect(int[] data, int k) {
+
+  }
+
+  /*Modify the array to be in increasing order.
+  */
+  public static void quicksort(int[] data) {
+
+  }
+
 
   public static void main(String[] args) {
   	int[] test1 = new int[]{17,61,67,93,47,12,20,4,44,68};
