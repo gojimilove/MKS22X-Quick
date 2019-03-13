@@ -41,7 +41,27 @@ public class Quick {
   /*return the value that is the kth smallest value of the array. k=0 is the smallest
   */
   public static int quickselect(int[] data, int k) {
-
+    int start = 0;
+    int end = data.length - 1;
+    int pivot = partition(data, 0, 5);
+    System.out.println("pivot: "+pivot);
+    System.out.println("k: "+k);
+    pivot = partition(data, 0, pivot);
+    System.out.println("pivot: "+pivot);
+    System.out.println("k: "+k);
+    pivot = partition(data, 0, pivot);
+    System.out.println("pivot: "+pivot);
+    System.out.println("k: "+k);
+    // while (start <= end) {
+    //   int pivot = partition(data, start, end);
+    //   System.out.println(pivot);
+    //   if (k < pivot) {
+    //     end = pivot;
+    //   }
+    //   else start = pivot;
+    //   System.out.println("start: "+start+" end: "+end);
+    // }
+    return data[k];
   }
 
   /*Modify the array to be in increasing order.
@@ -52,11 +72,14 @@ public class Quick {
 
 
   public static void main(String[] args) {
-  	int[] test1 = new int[]{17,61,67,93,47,12,20,4,44,68};
-  	int[] test2 = new int[]{27,29,6,13,45};
-  	int[] test3 = new int[]{8,6,7,5,3,0,9};
-  	System.out.println(partition(test1, 0, 9)+"\n\n");
-  	System.out.println(partition(test2, 0, 4)+"\n\n");
-  	System.out.println(partition(test3, 0, 6)+"\n\n");
+  	// int[] test1 = new int[]{17,61,67,93,47,12,20,4,44,68};
+  	// int[] test2 = new int[]{27,29,6,13,45};
+  	// int[] test3 = new int[]{8,6,7,5,3,0,9};
+  	// System.out.println(partition(test1, 0, 9)+"\n\n");
+  	// System.out.println(partition(test2, 0, 4)+"\n\n");
+  	// System.out.println(partition(test3, 0, 6)+"\n\n");
+    int[]ary = new int[]{2,10,15,23,0,5};
+    //System.out.println(partition(ary, 0, 5)+"\n\n");
+    System.out.println(quickselect(ary, 0));
   }
 }
