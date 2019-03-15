@@ -41,21 +41,24 @@ public class Quick {
   /*return the value that is the kth smallest value of the array. k=0 is the smallest
   */
   public static int quickselect(int[] data, int k) {
+    //default includes entire array
     int start = 0;
     int end = data.length - 1;
     int pivot = partition(data, start, end);
     // System.out.println("pivot: "+pivot);
     // System.out.println("k: "+k+"\n\n");
 
+    //stops when the resulting pivot and the k value are the same, that one is in the right spot
     while (pivot != k) {
+    	//"cut out" desired section of the array based on where the pivot ends up
     	if (pivot > k) end = pivot-1;
     	else start = pivot;
     	pivot = partition(data, start, end);
-    // 	for (int i = start; i < end+1; i++) {
+    	// for (int i = start; i < end+1; i++) {
   		// 	System.out.println(data[i]);
   		// }
   		// System.out.println("\n\npivot: "+pivot);
-    // 	System.out.println("k: "+k);
+    	// System.out.println("k: "+k);
     }
     return data[k];
   }
