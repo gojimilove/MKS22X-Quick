@@ -76,7 +76,16 @@ public class Quick {
   /*Modify the array to be in increasing order.
   */
   public static void quicksort(int[] data) {
+  	quicksortH(data, 0, data.length-1);
+  }
 
+  public static void quicksortH(int[] data, int low, int high) {
+  	if (low >= high) {
+  		return;
+  	}
+  	int pivot = partition(data, low, high);
+  	quicksortH(data, low, pivot-1);
+  	quicksortH(data, pivot+1, high);
   }
 
 
@@ -95,5 +104,18 @@ public class Quick {
     // System.out.println(quickselect(ary, 3));
     // System.out.println(quickselect(ary, 4));
     // System.out.println(quickselect(ary, 5));
+    System.out.print("BEFORE SORTING: [");
+    for (int i = 0; i < ary.length; i++) {
+  		System.out.print(ary[i]);
+  		if (i < ary.length-1) System.out.print(", ");
+  	}
+  	System.out.print("]");
+    quicksort(ary);
+    System.out.print("\n\nAFTER SORTING: [");
+    for (int i = 0; i < ary.length; i++) {
+  		System.out.print(ary[i]);
+  		if (i < ary.length-1) System.out.print(", ");
+  	}
+  	System.out.print("]\n");
   }
 }
