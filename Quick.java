@@ -48,7 +48,7 @@ public class Quick {
     // System.out.println("k: "+k+"\n\n");
 
     while (pivot != k) {
-    	if (pivot > k) end = pivot;
+    	if (pivot > k) end = pivot-1;
     	else start = pivot;
     	pivot = partition(data, start, end);
     // 	for (int i = start; i < end+1; i++) {
@@ -81,6 +81,6 @@ public class Quick {
     // System.out.println(quickselect(ary, 2));
     // System.out.println(quickselect(ary, 3));
     // System.out.println(quickselect(ary, 4));
-    // System.out.println(quickselect(ary, 5));
+    System.out.println(quickselect(ary, 5));
   }
 }
