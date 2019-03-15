@@ -6,8 +6,8 @@ public class Quick {
   	// for (int i = start; i < end+1; i++) {
   	// 	System.out.println(data[i]);
   	// }
-  	//int randPivot = (int)(Math.random()*(end+1));
-  	int pivot = end/2;
+  	int randPivot = (int)(Math.random()*(end+1-start));
+  	int pivot = randPivot;
   	//System.out.println("index "+pivot+": "+data[pivot]);
 
   	//pointers for current low and high
@@ -81,6 +81,6 @@ public class Quick {
     // System.out.println(quickselect(ary, 2));
     // System.out.println(quickselect(ary, 3));
     // System.out.println(quickselect(ary, 4));
-    System.out.println(quickselect(ary, 5));
+    // System.out.println(quickselect(ary, 5));
   }
 }
