@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Quick {
   /*
@@ -22,6 +22,8 @@ public class Quick {
 	  //pivot = randPivot;
   	//System.out.println("index "+pivot+": "+data[pivot]);
 
+	  Random rand = new Random();
+
   	//pointers for current low and high
   	int low = start;
   	int high = end;
@@ -32,7 +34,7 @@ public class Quick {
   			data[high] = oldP;
   			pivot = high;
   		}
-  		if (data[low] > data[pivot]) {
+  		if (data[low] > data[pivot] || data[low] == data[pivot] && rand.nextInt()%2 == 0) {
   			int oldL = data[low];
   			data[low] = data[high];
   			data[high] = oldL;
