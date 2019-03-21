@@ -1,6 +1,17 @@
 import java.util.*;
 
 public class Quick {
+	public static void insertionsort(int[] data, int lo, int hi) {
+		for (int i = lo; i < hi; i++) {
+			int current = data[i];
+			int j = 0;
+			for (j = i; j > 0 && current <= data[j - 1]; j--) {
+				data[j] = data[j - 1]; //move int at index (j-1) to index j
+			}
+			data[j] = current; //move int current to index j
+		}
+	}
+
   /*
   *@return the index of the final position of the pivot element.
   */
@@ -84,6 +95,10 @@ public class Quick {
   }
 
   public static void quicksortH(int[] data, int low, int high) {
+  	if (data.length <= 47) {
+    	insertionsort(data, 1, data.length);
+    	return;
+    }
   	if (low >= high) {
   		return;
   	}
